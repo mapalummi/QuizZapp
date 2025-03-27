@@ -1,0 +1,11 @@
+body{
+    background-color: azure;
+}
+
+.main_content{
+    min-height: 100vh;
+    background-color: azure !important;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
