@@ -33,14 +33,18 @@
         <img id="header_image" src="./img/quiz1.jpg" class="card-img-top" />
 
         <div class="progress" role="progressbar" aria-label="Example with label">
-          <div id="progress_bar" class="progress-bar" style="width: 0%">0%</div>
+          <div id="progress_bar" class="progress-bar" style="width: 0%;">0%</div>
         </div>
         
         <div id="end_screen" class="card-body" style="display: none">
           <div class="text-center end_text">Quiz beendet!</div>
-
           <div class="text-center">Du hast <b id="right_question_amount">xxx</b> von <b id="question_amount">xxx</b> Fragen richtig beantwortet.</div>
           
+          <div class="button_row">
+            <button onclick="restartGame()" class="btn btn-outline-primary">Neuer Versuch!?</button>
+          </div>
+          
+
         </div>
 
         <div id="question_body" class="card-body">
@@ -63,7 +67,7 @@
           </div>
 
           <div class="question_footer">
-            <span><b id="actual_card">1</b>von <b id="all_cards">12</b> Fragen</span>
+            <span><b id="actual_card">1</b> von <b id="all_cards">12</b> Fragen</span>
 
             <button onclick="nextQuestion()" id="next_button" class="btn btn-outline-primary" disabled>Nächste Frage</button>
           </div>

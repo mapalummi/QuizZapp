@@ -125,18 +125,15 @@ function renderQuestion(){
         document.getElementById('header_image').src = 'img/winner.jpg';
     } else { // Show Question:
 
-        let percent = (currentQuestion +1) / questions.length;
+        let percent = (currentQuestion + 1) / questions.length;
         percent = Math.round(percent * 100);
 
         document.getElementById('progress_bar').innerHTML = `${percent} %`;
         document.getElementById('progress_bar').style = ` width: ${percent}%`;
 
-        console.log('Fortschritt: ', percent);
-        
-
         let question = questions[currentQuestion];
 
-        document.getElementById('actual_card').innerHTML = currentQuestion +1;
+        document.getElementById('actual_card').innerHTML = currentQuestion + 1;
     
         document.getElementById('questiontext').innerHTML = question["question"];
         document.getElementById('answer_1').innerHTML = question["answer_1"];
@@ -185,4 +182,13 @@ function resetAnswerButtons(){
     document.getElementById('answer_3').parentNode.classList.remove('bg-success');
     document.getElementById('answer_4').parentNode.classList.remove('bg-danger');
     document.getElementById('answer_4').parentNode.classList.remove('bg-success');
+}
+
+function restartGame(){
+    document.getElementById('header_image').src = 'img/quiz1.jpg'; 
+    document.getElementById('end_screen').style = 'display: none'; // Endscreen ausblenden
+    document.getElementById('question_body').style = ''; // Questionbody wieder anzeigen
+    currentQuestion = 0;
+    rightQuestions = 0;
+    init();
 }
