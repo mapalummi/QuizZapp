@@ -102,7 +102,7 @@ let currentQuestion = 0;
 let rightQuestions = 0;
 let AUDIO_RIGHT = new Audio('audio/right_sound.mp3');
 let AUDIO_WRONG = new Audio('audio/wrong_sound.mp3');
-
+let AUDIO_FINAL = new Audio('audio/endsound2.mp3');
 
 function init(){
     renderCardNumber()
@@ -121,6 +121,9 @@ function renderQuestion(){
         // Show Endscreen:
         document.getElementById('end_screen').style = '';
         document.getElementById('question_body').style = 'display: none';
+
+        // Endsound
+        AUDIO_FINAL.play();
 
         document.getElementById('question_amount').innerHTML = questions.length;
         document.getElementById('right_question_amount').innerHTML = rightQuestions;
