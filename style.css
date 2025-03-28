@@ -38,3 +38,8 @@ body{
 .text-center{
     text-align: center;
 }
+
+.end_text{
+    font-size: 38px;
+    margin-bottom: 32px;
+}
