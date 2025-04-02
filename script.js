@@ -174,6 +174,7 @@ function restartGame() {
 }
 
 function showEndScreen() {
+  updateProgressBar();
   document.getElementById("end_screen").style = "";
   document.getElementById("question_body").style = "display: none";
   document.getElementById("question_amount").innerHTML = questions.length;
@@ -183,11 +184,16 @@ function showEndScreen() {
 }
 
 function updateProgressBar() {
-  let percent = (currentQuestion + 1) / questions.length;
-  percent = Math.round(percent * 100);
+  let percent;
+  if (gameIsOver()) {
+    percent = 100; // Setze auf 100%, wenn das Spiel vorbei ist
+  } else {
+    percent = (currentQuestion / questions.length) * 100;
+    percent = Math.round(percent);
+  }
 
   document.getElementById("progress_bar").innerHTML = `${percent} %`;
-  document.getElementById("progress_bar").style = ` width: ${percent}%`;
+  document.getElementById("progress_bar").style = `width: ${percent}%`;
 }
 
 function updateToNextQuestion() {
